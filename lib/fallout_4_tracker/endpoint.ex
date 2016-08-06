@@ -33,5 +33,6 @@ defmodule Fallout_4Tracker.Endpoint do
     key: "_fallout_4_tracker_key",
     signing_salt: "Vq/Ychku"
 
+  plug CORSPlug
   plug Fallout_4Tracker.Router
 end
