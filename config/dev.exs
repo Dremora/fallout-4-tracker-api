@@ -27,5 +27,5 @@ config :fallout_4_tracker, Fallout_4Tracker.Repo,
   username: "postgres",
   password: "postgres",
   database: "postgres",
-  hostname: "192.168.99.100",
+  hostname: "localhost",
   pool_size: 10
