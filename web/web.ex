@@ -22,7 +22,7 @@ defmodule Fallout_4Tracker.Web do
 
       import Ecto
       import Ecto.Changeset
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
     end
   end
 
@@ -32,7 +32,7 @@ defmodule Fallout_4Tracker.Web do
 
       alias Fallout_4Tracker.Repo
       import Ecto
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
 
       import Fallout_4Tracker.Router.Helpers
       import Fallout_4Tracker.Gettext
@@ -64,7 +64,7 @@ defmodule Fallout_4Tracker.Web do
 
       alias Fallout_4Tracker.Repo
       import Ecto
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
       import Fallout_4Tracker.Gettext
     end
   end

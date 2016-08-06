@@ -33,10 +33,12 @@ defmodule Fallout_4Tracker.ConnCase do
   end
 
   setup tags do
-    unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Fallout_4Tracker.Repo, [])
-    end
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Fallout_4Tracker.Repo)
 
-    {:ok, conn: Phoenix.ConnTest.conn()}
+    unless tags[:async] do
+      Ecto.Adapters.SQL.Sandbox.mode(Fallout_4Tracker.Repo, {:shared, self()})
+      end
+
+    {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

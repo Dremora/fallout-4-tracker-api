@@ -6,6 +6,7 @@ defmodule Fallout_4Tracker do
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
+    # Define workers and child supervisors to be supervised
     children = [
       # Start the endpoint when the application starts
       supervisor(Fallout_4Tracker.Endpoint, []),

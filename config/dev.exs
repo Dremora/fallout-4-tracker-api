@@ -13,12 +13,12 @@ config :fallout_4_tracker, Fallout_4Tracker.Endpoint,
   check_origin: false,
   watchers: []
 
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
-# Set a higher stacktrace during development.
-# Do not configure such in production as keeping
-# and calculating stacktraces is usually expensive.
+# Set a higher stacktrace during development. Avoid configuring such
+# in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database

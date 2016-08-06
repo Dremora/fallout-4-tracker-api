@@ -6,7 +6,7 @@ defmodule Fallout_4Tracker.ErrorView do
   end
 
   def render("500.json", _assigns) do
-    %{errors: %{detail: "Server internal error"}}
+    %{errors: %{detail: "Internal server error"}}
   end
 
   # In case no render clause matches or no

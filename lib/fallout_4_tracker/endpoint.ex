@@ -28,11 +28,13 @@ defmodule Fallout_4Tracker.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
 
+  # The session will be stored in the cookie and signed,
+  # this means its contents can be read but not tampered with.
+  # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
     key: "_fallout_4_tracker_key",
     signing_salt: "Vq/Ychku"
 
-  plug CORSPlug
   plug Fallout_4Tracker.Router
 end

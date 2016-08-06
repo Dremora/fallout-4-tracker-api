@@ -5,10 +5,13 @@
 # is restricted to this project.
 use Mix.Config
 
+# General application configuration
+config :fallout_4_tracker,
+  ecto_repos: [Fallout_4Tracker.Repo]
+
 # Configures the endpoint
 config :fallout_4_tracker, Fallout_4Tracker.Endpoint,
   url: [host: "localhost"],
-  root: Path.dirname(__DIR__),
   secret_key_base: "/oKm+k1eqCm5Ud4QnTdBV2TlAsovekuWZ9ZkWZ93oIURIDZY0DKlHv+s+M7Jy2FZ",
   render_errors: [accepts: ~w(json)],
   pubsub: [name: Fallout_4Tracker.PubSub,
@@ -22,8 +25,3 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
-
-# Configure phoenix generators
-config :phoenix, :generators,
-  migration: true,
-  binary_id: false

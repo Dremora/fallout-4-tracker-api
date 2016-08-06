@@ -32,8 +32,10 @@ defmodule Fallout_4Tracker.ChannelCase do
   end
 
   setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Fallout_4Tracker.Repo)
+
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Fallout_4Tracker.Repo, [])
+      Ecto.Adapters.SQL.Sandbox.mode(Fallout_4Tracker.Repo, {:shared, self()})
     end
 
     :ok

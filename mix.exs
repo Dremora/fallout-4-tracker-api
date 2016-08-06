@@ -18,7 +18,7 @@ defmodule Fallout_4Tracker.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Fallout_4Tracker, []},
-     applications: [:phoenix, :cowboy, :logger, :gettext,
+     applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex]]
   end
 
@@ -30,15 +30,16 @@ defmodule Fallout_4Tracker.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.1.6"},
+    [{:phoenix, "~> 1.2.0"},
+     {:phoenix_pubsub, "~> 1.0"},
      {:postgrex, ">= 0.0.0"},
-     {:phoenix_ecto, "~> 2.0"},
+     {:phoenix_ecto, "~> 3.0-rc"},
      {:gettext, "~> 0.9"},
      {:cors_plug, "~> 1.1"},
      {:cowboy, "~> 1.0"}]
   end
 
-  # Aliases are shortcut or tasks specific to the current project.
+  # Aliases are shortcuts or tasks specific to the current project.
   # For example, to create, migrate and run the seeds file at once:
   #
   #     $ mix ecto.setup
@@ -46,6 +47,7 @@ defmodule Fallout_4Tracker.Mixfile do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     ["ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-     "ecto.reset": ["ecto.drop", "ecto.setup"]]
+     "ecto.reset": ["ecto.drop", "ecto.setup"],
+     "test": ["ecto.create --quiet", "ecto.migrate", "test"]]
   end
 end
