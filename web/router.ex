@@ -7,5 +7,7 @@ defmodule Fallout_4Tracker.Router do
 
   scope "/api", Fallout_4Tracker do
     pipe_through :api
+
+    resources "/quests", QuestController, except: [:new, :edit]
   end
 end
