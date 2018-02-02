@@ -2,7 +2,6 @@ defmodule Fallout_4Tracker.Router do
   use Fallout_4Tracker.Web, :router
 
   pipeline :api do
-    plug CORSPlug
     plug :accepts, ["json"]
   end
 
